@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --principal: #5845dd;
+}
+
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+body {
+    background-image: -webkit-repeating-radial-gradient(rgba(128, 128, 128, 0.502), rgba(128, 128, 128, 0.502) 1px, transparent 0, transparent 100%);
+    background-size: 20px 20px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+main {
+    width: 500px;
+    height: 95vh;
+    background-color: white;
+    box-shadow: 0px 0px 10px #00000006;
+    border-radius: .4rem;
+    overflow: hidden;
+    max-width: 98%;
+}
+
+/* Corpo do perfil */
+
+.head {
+    background-color: var(--principal);
+    height: 15%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.head .perfil {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+
+.head .perfil .self {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 100%;
+    padding: 1px;
+    border: 3px solid white;
+    /* box-shadow: 0px 0px 5px transparent, 0px 0px 1px 10px white; */
+}
+
+.head .perfil .name {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.head .perfil .name h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.head .perfil .name p {
+    font-size: 10px;
+    font-weight: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+/* corpo das mensagens */
+
+.container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 0%;
+    overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: var(--principal);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: aliceblue;
+}
+
+.container .head-content {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.container .head-content .perfil .self {
+    width: 40px;
+    height: 40px;
+    background-color: var(--principal);
+    border-radius: 100%;
+    padding: 0;
+}
+
+.container .content {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 5px;
+    padding: 20px;
+    height: auto;
+    word-wrap: break-word;
+}
+
+.container .content-user {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+}
+
+.container .content .msg {
+    background-color: rgb(248, 247, 247);
+    width: auto;
+    max-width: 360px;
+    height: auto;
+    padding: 8px 15px;
+    border-radius: .4rem;
+    word-wrap: break-word;
+}
+
+.container .content .msg-user {
+    background-color: var(--principal);
+    color: white;
+}
+
+.container .message .timer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .message .timer-user {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.container .message p#time{
+    font-size: 10px;
+    color: gainsboro;
+    padding: 2px 6px;
+}
+
+
+
+/* Corpo para os elementos de envio */
+
+.bottom {
+    background-color: transparent;
+    height: 15%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: var(--principal);
+}
+
+.bottom .left-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom .right-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom button {
+    padding: 15px 18px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.171);
+}
+
+.bottom input {
+    padding: 15px;
+    outline: none;
+    width: 200px;
+    border-radius: 40px;
+    height: 50px;
+    color: white;
+    background-color: rgba(245, 245, 245, 0.171);
+    border: none;
+}
+
+.bottom input::-webkit-input-placeholder{
+    color: white;
+}
+
+
+/* Menu */
+
+.menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+}
+
+.menu button{
+    padding: 15px 18px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: var(--principal);
+    box-shadow: 0px 0px 10px #00000008;
+}
+
+.menu button#home {
+    background-color: white;
+}
+
+
+/* Modal */
+
+button{
+    padding: .6rem 1.2rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: .25rem;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+
+#fade, #modal{
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    z-index: 10;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    
+}
+#modal p{
+    color: gray;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#modal.hide,
+#fade.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide{
+    top: 0;
+}
+
+
